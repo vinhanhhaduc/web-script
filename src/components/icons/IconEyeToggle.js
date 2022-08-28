@@ -1,6 +1,10 @@
 import React from 'react';
 
-const IconEyeToggle = ({ open = false, onClick = () => {} }) => {
+const IconEyeToggle = ({
+  open = false,
+  onClick = () => {},
+  className = '',
+}) => {
   if (open)
     return (
       <svg
@@ -10,6 +14,7 @@ const IconEyeToggle = ({ open = false, onClick = () => {} }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         onClick={onClick}
+        className={className}
       >
         <path
           d="M3 12C3 12 6.27273 5 12 5C17.7273 5 21 12 21 12C21 12 17.7273 19 12 19C6.27273 19 3 12 3 12Z"

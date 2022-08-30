@@ -43,7 +43,7 @@ const Button = ({
     <button
       className={classNames(
         defaultBtnClassName,
-        !!isLoading ? 'opacity-50 pointer-events-none' : '',
+        !!isLoading ? 'opacity-50 pointer-events-none h-[56px]' : '',
         className,
       )}
     >

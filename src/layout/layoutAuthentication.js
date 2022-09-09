@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const LayoutAuthentication = (props) => {
   const { children, heading = '' } = props;
   return (
-    <div className="relative w-full min-h-screen p-10 bg-primary bg-opacity-10 isolate">
+    <div className="relative w-full min-h-screen p-10 bg-secondary bg-opacity-80 isolate">
       <img
         src="/ellipse.png"
         alt="bg"

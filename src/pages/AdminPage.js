@@ -1,11 +1,7 @@
 import React from 'react';
 
 const AdminPage = () => {
-  return (
-    <div className="bg-[#0000]">
-      <h1>asdasjfasuifguaisfuashf</h1>
-    </div>
-  );
+  return <div className="flex-1"></div>;
 };
 
 export default AdminPage;

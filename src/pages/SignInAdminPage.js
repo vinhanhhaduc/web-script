@@ -52,7 +52,7 @@ const SignInAdminPage = () => {
             ></IconEyeToggle>
           </Input>
         </FormGroup>
-        <Button kind="primary" className="w-full" type="submit">
+        <Button kind="primary" className={`w-full`} type="submit">
           Sign in
         </Button>
       </form>

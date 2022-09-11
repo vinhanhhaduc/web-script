@@ -1,12 +1,37 @@
+@import "reset";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-input::-ms-reveal,
-input::-ms-clear {
+@import "content";
+@layer base {
+  input {
+    @apply outline-none;
+  }
+}
+input:focus + .error-input {
   display: none;
 }
-input {
-  outline: none;
+.quill {
+  @apply border border-primary rounded-xl;
+  padding: 15px 25px;
+  .ql-toolbar.ql-snow {
+    border: none;
+    @apply bg-primary bg-opacity-10 rounded-xl py-3 px-5 inline-block;
+  }
+  .ql-container.ql-snow,
+  .ql-editor {
+    @apply border-none text-sm text-primary font-medium;
+  }
+  .ql-editor {
+    @apply pt-10;
+
+  }
+  .ql-editor.ql-blank::before {
+    @apply text-sm not-italic text-primary;
+  }
+  & > * {
+    scroll-snap-align: start;
+  }
 }
 .scroll-hidden {
   -ms-overflow-style: none;

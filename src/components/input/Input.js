@@ -10,6 +10,7 @@ const Input = (props) => {
     error = '',
     children,
     placeholder,
+    className = '',
     ...rest
   } = props;
   const { field } = useController({
@@ -27,8 +28,9 @@ const Input = (props) => {
           'w-full py-4 px-6 border rounded-xl text-sm font-medium bg-transparent',
           error.length > 0
             ? 'border-error text-error'
-            : 'border-primary text-text1',
+            : 'border-primary text-primary',
           children ? 'pr-16' : '',
+          className,
         )}
         placeholder={error.length <= 0 ? placeholder : ''}
         {...field}

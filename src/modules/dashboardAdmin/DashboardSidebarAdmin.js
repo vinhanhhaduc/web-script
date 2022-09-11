@@ -19,25 +19,25 @@ export const sidebarAdmin = [
     id: 2,
     icon: <IconAddPost></IconAddPost>,
     name: 'Add post',
-    url: '/admin/add-post',
+    url: '/add-post',
   },
   {
     id: 3,
     icon: <IconManagePost></IconManagePost>,
     name: 'Manage post',
-    url: '/admin/manage-post',
+    url: '/manage-post',
   },
   {
     id: 4,
     icon: <IconAddCategory></IconAddCategory>,
     name: 'Add category',
-    url: '/admin/add-category',
+    url: '/add-category',
   },
   {
     id: 5,
     icon: <IconManageCategory></IconManageCategory>,
     name: 'Manage category',
-    url: '/admin/manage-category',
+    url: '/manage-category',
   },
   { id: 6, icon: <IconSettings></IconSettings>, name: 'Setting' },
   { id: 7, icon: <IconLogOut></IconLogOut>, name: 'Log out' },
@@ -53,6 +53,7 @@ const DashboardSidebarAdmin = ({ show = false }) => {
             {sidebarAdmin.map((items) => (
               <NavLink
                 to={`${items.url}`}
+                key={items.name}
                 className={({ isActive }) =>
                   isActive
                     ? `${sidebarClassName} bg-white rounded text-primary ${

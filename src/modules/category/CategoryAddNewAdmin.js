@@ -5,11 +5,26 @@ import Input from '../../components/input/Input';
 import FormGroup from '../../components/common/FormGroup';
 import { useForm } from 'react-hook-form';
 import Button from '../../components/button/Button';
+import axios from 'axios';
+import { apiURL } from '../../config/config';
+import { toast } from 'react-toastify';
 
 const CategoryAddNewAdmin = () => {
-  const { handleSubmit, control, isSubmitting } = useForm();
-  const handleAddNewCategory = (values) => {
-    console.log(values);
+  const { handleSubmit, control, isSubmitting, reset } = useForm();
+  const resetValues = () => {
+    reset({});
+  };
+  const handleAddNewCategory = async (values) => {
+    try {
+      await axios.post(`${apiURL}/categories`, {
+        ...values,
+      });
+      toast.success('Add new category successfully');
+      resetValues();
+    } catch (err) {
+      toast.error('Can not add new category');
+    }
+    resetValues();
   };
   return (
     <div className="w-[60%] mt-10 mx-auto">

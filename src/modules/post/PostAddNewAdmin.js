@@ -10,18 +10,34 @@ import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import ImageUploader from 'quill-image-uploader';
 import axios from 'axios';
-import { imgbbAPI } from '../../config/config';
+import { apiURL, imgbbAPI } from '../../config/config';
+import { toast } from 'react-toastify';
+import PostUploader from './part/PostUploader';
 Quill.register('modules/imageUploader', ImageUploader);
 const categoriesData = ['blox fruit', 'all star tower defense'];
 const PostAddNewAdmin = () => {
   const [content, setContent] = useState('');
   const { handleSubmit, control, setValue, reset, watch } = useForm();
+
   const getDropdownLabel = (name, defaultValue = '') => {
     const value = watch(name) || defaultValue;
     return value;
   };
+  const resetValues = () => {
+    reset({});
+    setContent('');
+  };
   const handleAddNewCampaign = async (values) => {
-    console.log(values);
+    try {
+      await axios.post(`${apiURL}/posts`, {
+        ...values,
+        content,
+      });
+      toast.success('Add new post successfully');
+      resetValues();
+    } catch (err) {
+      toast.error('Can not add new post');
+    }
   };
   const handleSelectDropdownOption = (name, value) => {
     setValue(name, value);
@@ -103,16 +119,23 @@ const PostAddNewAdmin = () => {
               onChange={setContent}
             />
           </FormGroup>
+          <FormGroup>
+            <PostUploader
+              onChange={setValue}
+              name="featured_image"
+            ></PostUploader>
+          </FormGroup>
           <FormRow>
             <FormGroup>
               <Label>Script</Label>
               <Input
                 control={control}
-                name="prefilled"
+                name="script"
                 placeholder="Script"
                 className="placeholder:text-primary"
               ></Input>
               <p className="text-sm text-left text-primary font-medium">
+                Example:
                 loadstring(game:HttpGet"https://raw.githubusercontent.com/xDepressionx/Free-Script/main/AllScript.lua")()
               </p>
             </FormGroup>

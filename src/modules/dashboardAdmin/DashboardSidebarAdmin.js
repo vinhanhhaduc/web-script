@@ -39,7 +39,12 @@ export const sidebarAdmin = [
     name: 'Manage category',
     url: '/manage-category',
   },
-  { id: 6, icon: <IconSettings></IconSettings>, name: 'Setting' },
+  {
+    id: 6,
+    icon: <IconSettings></IconSettings>,
+    name: 'Setting',
+    url: '/setting',
+  },
   { id: 7, icon: <IconLogOut></IconLogOut>, name: 'Log out' },
 ];
 export const sidebarClassName =

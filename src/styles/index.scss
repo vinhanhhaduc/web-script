@@ -46,3 +46,22 @@ input:focus + .error-input {
   background: #A273FF;
   opacity: 0.70;
 }
+.file-types {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+body {
+  .kiHXWb {
+    @apply border border-primary max-w-[1000px] p-10 mx-auto w-full border-solid rounded-xl;
+  }
+  .fVfcRr > span {
+    @apply font-medium text-base ml-4 flex items-center
+  }
+  .cXBrtO span {
+    @apply hidden
+  }
+  .eWRUdH {
+    @apply bg-primary bg-opacity-10 text-primary
+  }
+}

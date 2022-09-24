@@ -1,0 +1,47 @@
+{
+  "users": [],
+  "categories": [
+    {
+      "name": "Avade",
+      "slug": "avade",
+      "id": 1
+    }
+  ],
+  "posts": [
+    {
+      "title": "",
+      "script": "",
+      "video": "",
+      "content": "<p><br></p>",
+      "id": 1
+    },
+    {
+      "title": "",
+      "script": "",
+      "video": "",
+      "content": "",
+      "id": 2
+    },
+    {
+      "title": "sadasdsa",
+      "script": "asdasd",
+      "video": "asdasd",
+      "featured_image": {
+        "medium": "https://i.ibb.co/0D6LbpM/carbon.png",
+        "thumb": "https://i.ibb.co/WxMXJNy/carbon.png",
+        "url": "https://i.ibb.co/2nCr40t/carbon.png"
+      },
+      "category": "blox fruit",
+      "content": "<p>asdasd</p>",
+      "id": 3
+    },
+    {
+      "title": "asdas",
+      "script": "asdasd",
+      "video": "asdasd",
+      "category": "all star tower defense",
+      "content": "<p>asdasd</p>",
+      "id": 4
+    }
+  ]
+}

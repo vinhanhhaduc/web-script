@@ -6,6 +6,7 @@ import LayoutDashboardAdmin from './layout/layoutDashboardAdmin';
 
 import AddPostPage from './pages/AddPostPage';
 import CategoryAddNewAdmin from './modules/category/CategoryAddNewAdmin';
+import DashboardPage from './pages/DashboardPage';
 function App() {
   return (
     <Suspense>
@@ -18,7 +19,11 @@ function App() {
             element={<CategoryAddNewAdmin></CategoryAddNewAdmin>}
           />
         </Route>
-        <Route path="/sign-in" element={<SignInAdminPage></SignInAdminPage>} />
+        <Route
+          path="/admin/sign-in"
+          element={<SignInAdminPage></SignInAdminPage>}
+        />
+        <Route path="/" element={<DashboardPage></DashboardPage>}></Route>
       </Routes>
     </Suspense>
   );

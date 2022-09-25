@@ -110,6 +110,13 @@ const PostAddNewAdmin = () => {
             </FormGroup>
           </FormRow>
           <FormGroup>
+            <Label>Upload image</Label>
+            <PostUploader
+              onChange={setValue}
+              name="featured_image"
+            ></PostUploader>
+          </FormGroup>
+          <FormGroup>
             <Label>Story *</Label>
             <ReactQuill
               placeholder="Write your story......"
@@ -118,12 +125,6 @@ const PostAddNewAdmin = () => {
               value={content}
               onChange={setContent}
             />
-          </FormGroup>
-          <FormGroup>
-            <PostUploader
-              onChange={setValue}
-              name="featured_image"
-            ></PostUploader>
           </FormGroup>
           <FormRow>
             <FormGroup>
